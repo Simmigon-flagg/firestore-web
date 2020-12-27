@@ -14,17 +14,18 @@ var config = {
 firebase.initializeApp(config);
 const firestore = firebase.firestore();
 const doc_users = firestore.doc("/users/name");
-const message = document.querySelector("#message");
-const textBox = document.querySelector("#getvalue");
+const message = document.querySelector("#messagefromfirestore");
+const textBox = document.querySelector("#inputEmail");
 const saveBtn = document.querySelector("#saveBtn");
+const signout = document.querySelector("#signout");
 
 saveBtn.addEventListener("click", function () {
-   const name = textBox.value;
-
+  const name = textBox.value;
+  alert(name);
   if (name !== null || name !== "undefined") {
     doc_users
       .set({
-        name
+        name,
       })
       .then(function () {
         console.log("Saved and working");
@@ -38,6 +39,10 @@ saveBtn.addEventListener("click", function () {
 doc_users.onSnapshot(function (doc) {
   if (doc && doc.exists) {
     const realTime = doc.data();
-    message.innerHTML = `Name: ${realTime.name}`;
+    message.innerHTML = `${realTime.name}`;
   }
+});
+
+signout.addEventListener("click", function () {
+  window.location.pathname = "/index.html";
 });

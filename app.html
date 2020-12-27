@@ -73,33 +73,37 @@
 
 
 
-<!-- Custom styles for this template -->
 
 </head>
 <body class="text-center">
-<main class="form-signin">
-  <form>
-    <img class="mb-4" src="" alt="Company Logo" width="72" height="57" />
-    <h1 class="h3 mb-3 fw-normal">Please sign in Index</h1>
+  <main class="form-signin">
+    <form>
+      <img class="mb-4" alt="Company Logo" width="72" height="57" />
+      <h1 class="h3 mb-3 fw-normal" >Firestore Application</h1>
     <label for="inputEmail" class="visually-hidden">Email address</label>
+    
     <input
-      type="text" 
-      id="inputEmail"
-      class="form-control"
-      placeholder="Email address"
-      required
-      autofocus
-      value="Simmigon"
-    />
-  
-    <input id="signin" class="w-100 btn btn-lg btn-primary mt-3" type="button" value="Sign In" />
-    <p class="mt-5 mb-3 text-muted">&copy; 2017-2020</p>
+    type="email"
+    id="inputEmail"
+    class="form-control"
+    placeholder="Email address"
+    required
+    autofocus
+    >
+    
+    <input id="saveBtn" class="w-100 btn btn-lg btn-primary mt-3" type="button" value="Save to Firestore" />
   </form>
+  <hr />
+  <h1 class="h3 mb-3 fw-normal" id="messagefromfirestore" ></h1>
+  <p class="mt-5 mb-3 text-muted">&copy; 2017-2020</p>
 </main>
 
+<input id="signout" class="w-100 btn btn-lg btn-primary mt-3" type="button"  value="Sign out" />
 
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
 
-    <script src="./index_auth.js"></script>
+    <script src="./app.js"></script>
 
   </body>
 </html>
