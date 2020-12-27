@@ -14,27 +14,28 @@ var config = {
 firebase.initializeApp(config);
 const firestore = firebase.firestore();
 const message = document.querySelector("#messagefromfirestore");
-const textBox = document.querySelector("#inputEmail");
+const textBox = document.querySelector("#textBox");
 const saveBtn = document.querySelector("#saveBtn");
 const signout = document.querySelector("#signout");
 
 saveBtn.addEventListener("click", function () {
-  const name = textBox.value;
+  const name = { name: textBox.value };
   const randomNum = Math.round(Math.random() * 9999999) + 1;
   console.log(randomNum);
   const doc_users = firestore.doc(`/users/${randomNum}`);
 
   if (name !== null || name !== "undefined") {
-    doc_users
-      .set({
-        name,
-      })
-      .then(function () {
-        console.log("Saved and working");
-      })
-      .catch(function () {
-        console.log("Not working");
-      });
+    firestore.collection("/users").add(name);
+    // firestore.collection.("/user")
+    //   .add({
+    //     name,
+    //   })
+    //   .then(function () {
+    //     console.log("Saved and working");
+    //   })
+    //   .catch(function () {
+    //     console.log("Not working");
+    //   });
   }
 });
 
