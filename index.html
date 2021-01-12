@@ -3,21 +3,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <title>Document</title>
   </head>
   <body>
-    <h1 id="message"></h1>
-    <input id="getvalue" type="text" />
-    <input id="saveBtn" type="button" value="Save to Firestore" />
+
+    <form id="loginform">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="password">
+      </div>
+      <button id="signIneandpBtn" class="btn btn-primary">Login</button>
+      <button id="signUpeandpBtn" class="btn btn-primary">Sign up</button>
+    </form>
+
+    <hr />
+    <input id="anonymousBtnLogin" type="button" value="Anonymous No Login" class="btn btn-primary"/>
+    <hr />
+    <input id="googleBtnLogin" type="button" value="Google Login              " class="btn btn-primary"/>
+    <hr />
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
 
     <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="./app.js"></script>
-
+    <script src="./config.js"></script>
+    <script src="./auth.js"></script>
   
   </body>
 </html>
